@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains location_time_display.module..
+ * Contains location_time_display.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -23,16 +23,16 @@ function location_time_display_help($route_name, RouteMatchInterface $route_matc
 }
 
 /**
- * Theme hook
+ * Implements hook_theme().
  */
 function location_time_display_theme($existing, $type, $theme, $path) {
   return [
-    'location_time_display' => array(
-      'variables' => array(
+    'location_time_display' => [
+      'variables' => [
         'country' => NULL,
         'city' => NULL,
         'locationtime' => NULL,
-      ),
-    ),
+      ],
+    ],
   ];
 }
