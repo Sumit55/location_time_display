@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains location_time_display.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function location_time_display_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.location_time_display':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Location time display') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Theme hook
+ */
+function location_time_display_theme($existing, $type, $theme, $path) {
+  return [
+    'location_time_display' => array(
+      'variables' => array(
+        'country' => NULL,
+        'city' => NULL,
+        'locationtime' => NULL,
+      ),
+    ),
+  ];
+}

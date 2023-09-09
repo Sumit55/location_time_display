@@ -1,0 +1,9 @@
+services:
+  location_time_display.locationtime_service:
+    class: Drupal\location_time_display\LocationTimeService
+    arguments: ['@datetime.time', '@config.factory', '@date.formatter']
+  cache_context.location_time:
+    class: Drupal\location_time_display\CacheContext\LocationTimeCacheContext
+    arguments: ['@location_time_display.locationtime_service']
+    tags:
+      - { name: cache_context }

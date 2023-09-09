@@ -1,0 +1,6 @@
+name: Location Time Display
+type: module
+description: Display Site Location and Current Time.
+core_version_requirement: ^9 || ^10
+package: Custom
+configure: location_time_display.settings

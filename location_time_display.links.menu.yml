@@ -1,0 +1,7 @@
+location_time_display.menu_settings:
+  title: 'Location Time Settings Form'
+  route_name: location_time_display.settings
+  description: 'Shows menu link in the configuration section'
+  parent: system.admin_config_system
+  weight: 99
+

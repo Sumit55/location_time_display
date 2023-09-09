@@ -1,0 +1,24 @@
+
+{#
+/**
+ * @file
+ * Custom theme implementation to display location time.
+ *
+ * Available variables:
+ * - city: City name.
+ * - country: Country name.
+ * - locationtime: Location date and time.
+ */
+#}
+
+{% set location_datetime = locationtime %}
+{% set date_parts = location_datetime|split(' - ') %}
+{% set current_date = date_parts[0] %}
+{% set formatted_date = current_date|replace({'th': '', 'st': '', 'nd': '', 'rd': ''}) %}
+{% set formatted_date = formatted_date|date("l, j F Y") %}
+
+<div class = "location-wrapper">
+  <p class = "location-time"><h2> {{ date_parts[1] }} </h2></p>
+  <p class = "location-date"> {{ formatted_date }} </p>
+  <p class = "location-place">{{ city ~ " , " ~ country }} </p>
+</div>
